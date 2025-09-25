@@ -201,21 +201,21 @@
     }
 
     .wealth-list li {
-        margin-bottom: 0.6rem; /* Adjusted for tighter spacing */
-        padding: 0.6rem; /* Adjusted for smaller items */
+        margin-bottom: 0.6rem;
+        padding: 0.6rem 0.6rem 0.6rem 3rem; /* Increased padding-left for icon buffer */
         background: rgba(52, 152, 219, 0.1);
         border-radius: 8px;
         border-left: 4px solid #3498db;
         position: relative;
         transform: translateX(0);
         transition: all 0.3s ease;
-        font-size: 0.9rem; /* Slightly smaller font for better fit */
+        font-size: 0.9rem;
     }
 
     .wealth-list li::before {
         content: '✓';
         position: absolute;
-        left: -0.5rem;
+        left: 1rem; /* Adjusted left position to create more margin */
         top: 50%;
         transform: translateY(-50%);
         color: #3498db;
@@ -228,7 +228,7 @@
         align-items: center;
         justify-content: center;
         font-size: 0.8rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: none; /* Removed box-shadow for a cleaner look */
     }
 
     .slide-counter {
@@ -302,6 +302,27 @@
     .payment-qr-container {
         margin-top: 1.5rem;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gpay-button {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        margin-top: 1rem;
+        background: linear-gradient(135deg, #4ecdc4, #44bd87);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        box-shadow: 0 8px 16px rgba(78, 205, 196, 0.3);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .gpay-button:active {
+        transform: scale(0.95);
+        box-shadow: 0 4px 8px rgba(78, 205, 196, 0.4);
     }
     
     .payment-qr-container img {
@@ -419,7 +440,7 @@
         
         h1 { font-size: 1.4rem; margin-bottom: 0.6rem; }
         h2 { font-size: 1.2rem; margin-bottom: 0.6rem; }
-        h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+        h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
         p { font-size: 0.8rem; margin-bottom: 0.6rem; }
         .quote { margin: 0.8rem 0; padding: 0.6rem; font-size: 0.8rem; }
         .circles-container { max-width: 150px; margin: 0.8rem auto; }
@@ -556,7 +577,7 @@
     <!-- Slide 10: Exit Strategy -->
     <div class="slide">
         <div class="slide-content">
-            <h2>बेहतरी की दिशा</h2>
+            <h2>बेहतर भविष्य</h2>
             <div class="comparison-box community-box">
                 <h3>बाहर निकलने की रणनीति</h3>
                 <p>सदस्यों को बेहतर समुदायों में जाने में मदद करें।</p>
@@ -597,8 +618,10 @@
             </p>
             <div class="payment-qr-container">
                 <h3>सहयोग करें 🙏</h3>
-                <p style="font-size: 0.85rem; margin-bottom: 0.5rem; color: #7f8c8d;">स्कैन करें और अपना समर्थन दें</p>
-                <img src="https://i.postimg.cc/Y93CRNrW/IMG-7211.jpg" alt="Payment QR Code">
+                <p style="font-size: 0.85rem; margin-bottom: 0.5rem; color: #7f8c8d;">99 रुपये का योगदान करने के लिए टैप करें</p>
+                <a href="upi://pay?pa=9892334681@kotak&am=99&cu=INR&tn=Donation%20for%20Community%20Manifesto" class="gpay-button" target="_blank" rel="noopener noreferrer">
+                    GPay से भुगतान करें
+                </a>
             </div>
         </div>
     </div>
